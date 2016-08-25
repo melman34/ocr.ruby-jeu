@@ -96,7 +96,7 @@ class Jeu
     # On commence à 2 car 0 et 1 sont réservés pour les actions
     # de soin et d'amélioration d'attaque
     i = 2
-    monde.ennemis.each do |ennemi|
+    monde.ennemis_en_vie.each do |ennemi|
       puts "#{i} - Attaquer #{ennemi.info}"
       i = i + 1
     end
@@ -166,7 +166,7 @@ puts "\n\nAinsi débutent les aventures de #{joueur.nom}\n\n"
     # Choix - 2 car nous avons commencé à compter à partir de 2
     # car les choix 0 et 1 étaient réservés pour le soin et
     # l'amélioration d'attaque
-    ennemi_a_attaquer = monde.ennemis[choix - 2]
+    ennemi_a_attaquer = monde.ennemis_en_vie[choix - 2]
     joueur.attaque(ennemi_a_attaquer)
   end
 
